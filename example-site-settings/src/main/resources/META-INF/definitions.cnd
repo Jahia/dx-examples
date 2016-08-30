@@ -1,0 +1,11 @@
+<exmix = 'http://www.jahia.org/example-module/mix'>
+<exnt = 'http://www.jahia.org/example-module/nt'>
+<ex = 'http://www.jahia.org/example-module/ex'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
+
+[exnt:settings] > nt:base, jmix:unversionedBasemetadata
+ - ex:setting1 (string) nofulltext
+
+[exnt:manageSettings] > jnt:content, jmix:siteComponent, mix:title, jmix:studioOnly

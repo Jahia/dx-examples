@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
+    <modules jcr:primaryType="jnt:modules">
+        <example-site-settings j:dependencies="default"
+                             j:modulePriority="0"
+                             j:moduleType="module"
+                             j:title="Example Site Settings"
+                             jcr:primaryType="jnt:module">
+                
+                <portlets jcr:primaryType="jnt:portletFolder"/>
+                <files jcr:primaryType="jnt:folder"/>
+                <contents jcr:primaryType="jnt:contentFolder"/>
+                <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
+                    <files jcr:primaryType="jnt:folder">
+                        <example_icon.png j:height="16"
+                                 j:width="16"
+                                 jcr:mixinTypes="jmix:image"
+                                 jcr:primaryType="jnt:file">
+                            <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                        </example_icon.png>
+                    </files>
+                    <contents jcr:primaryType="jnt:contentFolder"/>
+                    <site-settings-base j:view="siteSettings"
+                                jcr:mixinTypes="jmix:useUILocale"
+                                jcr:primaryType="jnt:template">
+                        <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="Site Settings Base"/>
+                        <example-settings j:applyOn="jnt:virtualsite"
+                                 j:defaultTemplate="false"
+                                 j:hiddenTemplate="false"
+                                 j:icon="/modules/example-site-settings/templates/files/example_icon.png"
+                                 j:view="example.settings"
+                                 jcr:primaryType="jnt:contentTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="##resourceBundle(exnt_settings)##"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <manage-example-settings jcr:primaryType="exnt:manageSettings">
+                                    <j:translation_en jcr:language="en"
+                                          jcr:mixinTypes="mix:title"
+                                          jcr:primaryType="jnt:translation"/>
+                                </manage-example-settings>
+                            </pagecontent>
+                        </example-settings>
+                    </site-settings-base>
+                </templates>
+                
+            </example-site-settings>
+    </modules>
+</content>

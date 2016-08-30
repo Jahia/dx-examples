@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!--Site Settings-->
+    <bean class="org.jahia.modules.example.settings.SettingsListener">
+        <property name="workspace" value="default"/>
+    </bean>
+
+    <bean class="org.jahia.modules.example.settings.SettingsChangedListener">
+        <property name="settingsService" ref="settingsService"/>
+    </bean>
+
+    <bean id="settingsService"
+          class="org.jahia.modules.example.settings.SettingsService"
+          factory-method="getInstance"/>
+
+    <bean class="org.jahia.modules.example.settings.SettingsFilter">
+        <property name="description" value="Injects context info in admin UI"/>
+        <property name="applyOnModes" value="settings,edit,preview"/>
+        <property name="priority" value="2"/>
+        <property name="applyOnTemplates" value="example.settings"/>
+        <property name="settingsService" ref="settingsService"/>
+    </bean>
+
+    <bean id="settingsAction" class="org.jahia.modules.example.settings.SettingsAction">
+        <property name="name" value="exampleSettings"/>
+        <property name="settingsService" ref="settingsService"/>
+    </bean>
+
+</beans>

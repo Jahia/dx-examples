@@ -1,0 +1,9 @@
+/.classpath
+/.project
+/.settings
+.idea
+*.iml
+*.ipr
+target
+.DS_Store
+**/*.xml.generated
