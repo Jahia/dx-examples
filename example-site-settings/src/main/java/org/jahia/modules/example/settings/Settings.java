@@ -23,6 +23,7 @@ public class Settings {
     private String siteKey;
     private boolean enabled;
     private String setting1;
+
     /**
      * @param siteKey
      * @throws IOException
@@ -65,23 +66,23 @@ public class Settings {
             // read default settings
             return JCRTemplate.getInstance()
                     .doExecuteWithSystemSessionAsUser(null, Constants.EDIT_WORKSPACE, null, new JCRCallback<Boolean>() {
-                public Boolean doInJCR(final JCRSessionWrapper session) throws RepositoryException {
-                    // Check if site node exists, then check if the settings node exists on site.
-                    if (session.nodeExists("/sites/" + siteKey)
-                            && session.nodeExists("/sites/" + siteKey + "/" + SettingsConstants.SETTINGS_NODE_NAME)) {
-                        // Retrieve settings node from the JCR.
-                        final JCRNodeWrapper settingsNode = session
-                                .getNode("/sites/" + siteKey + "/" + SettingsConstants.SETTINGS_NODE_NAME);
+                        public Boolean doInJCR(final JCRSessionWrapper session) throws RepositoryException {
+                            // Check if site node exists, then check if the settings node exists on site.
+                            if (session.nodeExists("/sites/" + siteKey)
+                                    && session.nodeExists("/sites/" + siteKey + "/" + SettingsConstants.SETTINGS_NODE_NAME)) {
+                                // Retrieve settings node from the JCR.
+                                final JCRNodeWrapper settingsNode = session
+                                        .getNode("/sites/" + siteKey + "/" + SettingsConstants.SETTINGS_NODE_NAME);
 
-                        if (settingsNode.hasProperty(SettingsConstants.SETTINGS_EX_SETTING_1)) {
-                            setting1 = settingsNode
-                                    .getProperty(SettingsConstants.SETTINGS_EX_SETTING_1).getString();
+                                if (settingsNode.hasProperty(SettingsConstants.SETTINGS_EX_SETTING_1)) {
+                                    setting1 = settingsNode
+                                            .getProperty(SettingsConstants.SETTINGS_EX_SETTING_1).getString();
+                                }
+                                return Boolean.TRUE;
+                            }
+                            return Boolean.FALSE;
                         }
-                        return Boolean.TRUE;
-                    }
-                    return Boolean.FALSE;
-                }
-            });
+                    });
         } catch (RepositoryException e) {
             LOGGER.error("Error reading settings from the repository.", e);
         }
@@ -97,29 +98,29 @@ public class Settings {
             // store default props
             JCRTemplate.getInstance()
                     .doExecuteWithSystemSessionAsUser(null, Constants.EDIT_WORKSPACE, null, new JCRCallback<Boolean>() {
-                public Boolean doInJCR(final JCRSessionWrapper session) throws RepositoryException {
-                    final JCRNodeWrapper settingsNode;
+                        public Boolean doInJCR(final JCRSessionWrapper session) throws RepositoryException {
+                            final JCRNodeWrapper settingsNode;
 
-                    // Check if the settings node exists as a child of the site node.  If exists, retrieve the node.
-                    if (session.nodeExists("/sites/" + siteKey + "/" + SettingsConstants.SETTINGS_NODE_NAME)) {
-                        settingsNode = session.getNode("/sites/" + siteKey + "/" + SettingsConstants.SETTINGS_NODE_NAME);
-                    }
-                    // Otherwise, add the node as a child to the site node.
-                    else {
-                        settingsNode = session.getNode("/sites/" + siteKey).addNode(SettingsConstants.SETTINGS_NODE_NAME,
-                                SettingsConstants.SETTINGS_NODE_TYPE);
-                    }
+                            // Check if the settings node exists as a child of the site node.  If exists, retrieve the node.
+                            if (session.nodeExists("/sites/" + siteKey + "/" + SettingsConstants.SETTINGS_NODE_NAME)) {
+                                settingsNode = session.getNode("/sites/" + siteKey + "/" + SettingsConstants.SETTINGS_NODE_NAME);
+                            }
+                            // Otherwise, add the node as a child to the site node.
+                            else {
+                                settingsNode = session.getNode("/sites/" + siteKey).addNode(SettingsConstants.SETTINGS_NODE_NAME,
+                                        SettingsConstants.SETTINGS_NODE_TYPE);
+                            }
 
-                    // Set the property and return boolean if the node needs to be updated.
-                    boolean doSave = setProperty(settingsNode, SettingsConstants.SETTINGS_EX_SETTING_1,
-                            getSetting1());
+                            // Set the property and return boolean if the node needs to be updated.
+                            boolean doSave = setProperty(settingsNode, SettingsConstants.SETTINGS_EX_SETTING_1,
+                                    getSetting1());
 
-                    if (doSave) {
-                        session.save();
-                    }
-                    return Boolean.TRUE;
-                }
-            });
+                            if (doSave) {
+                                session.save();
+                            }
+                            return Boolean.TRUE;
+                        }
+                    });
         } catch (RepositoryException e) {
             LOGGER.error("Error storing settings into the repository.", e);
         }

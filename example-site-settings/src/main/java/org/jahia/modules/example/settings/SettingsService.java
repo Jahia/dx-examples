@@ -38,7 +38,6 @@ public class SettingsService implements InitializingBean, JahiaModuleAware {
     }
 
     /**
-     *
      * @return
      */
     public static SettingsService getInstance() {
@@ -160,7 +159,6 @@ public class SettingsService implements InitializingBean, JahiaModuleAware {
     }
 
     /**
-     *
      * @return
      */
     public Set<String> getSupportedLocales() {
@@ -168,7 +166,6 @@ public class SettingsService implements InitializingBean, JahiaModuleAware {
     }
 
     /**
-     *
      * @return
      */
     public String getResourceBundleName() {

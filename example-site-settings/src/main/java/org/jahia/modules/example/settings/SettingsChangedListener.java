@@ -39,7 +39,6 @@ public class SettingsChangedListener implements ApplicationListener<ApplicationE
     }
 
     /**
-     *
      * @param settingsService
      */
     public void setSettingsService(final SettingsService settingsService) {
@@ -79,7 +78,6 @@ public class SettingsChangedListener implements ApplicationListener<ApplicationE
         }
 
         /**
-         *
          * @return
          */
         public List<String> getAffectedSites() {

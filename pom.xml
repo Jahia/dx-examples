@@ -69,61 +69,62 @@
         If you are unsure which license is appropriate for your use,
         please contact the sales department at sales@jahia.com.
 
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+--><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.jahia.modules</groupId>
-        <artifactId>jahia-modules</artifactId>
-        <version>7.1.2.0</version>
-    </parent>
+  <parent>
+    <groupId>org.jahia.modules</groupId>
+    <artifactId>jahia-modules</artifactId>
+    <version>7.1.2.0</version>
+  </parent>
 
-    <artifactId>dx-examples</artifactId>
-    <name>Jahia DX Examples</name>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <description>This repo has examples on how to implement common functionalities in Jahia DX platform.</description>
+  <artifactId>dx-examples</artifactId>
+  <name>Jahia DX Examples</name>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <description>This repo has examples on how to implement common functionalities in Jahia DX platform.</description>
 
-    <scm>
-        <connection>scm:dummy:uri</connection>
-        <developerConnection>scm:dummy:uri</developerConnection>
-    </scm>
-	
-	<modules>
-		<module>example-site-settings</module>
-	</modules>
+  <scm>
+    <connection>scm:dummy:uri</connection>
+    <developerConnection>scm:dummy:uri</developerConnection>
+  </scm>
 
-    <repositories>
-        <repository>
-            <id>jahia-public</id>
-            <name>Jahia Public Repository</name>
-            <url>https://devtools.jahia.com/nexus/content/groups/public</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+  <modules>
+    <module>example-site-settings</module>
+    <module>example-authentication-valve</module>
+    <module>example-action</module>
+    <module>example-filter</module>
+    <module>example-rules</module>
+    <module>example-jsp-tag</module>
+  </modules>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Jahia-Depends>default</Jahia-Depends>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <repositories>
+    <repository>
+      <id>jahia-public</id>
+      <name>Jahia Public Repository</name>
+      <url>https://devtools.jahia.com/nexus/content/groups/public</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Jahia-Depends>default</Jahia-Depends>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

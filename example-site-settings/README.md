@@ -1,54 +1,54 @@
 #Example Site Settings
 The goal of this module is to set the foundation of standardizing the Site Settings experience.
 
-#Tech Stack
+##Tech Stack
 - Jahia DX
 - Angular
 - Jquery
 - Underscore
 
-#Usage
+##Usage
 Deploy this module and enable it for a site.  Go to edit mode and site settings tab to administer the example site settings.
 
-#Components
+##Components
 
-##Settings
+###Settings
 This component is used as a type on the node that will save the site settings to the JCR.
 
-##Manage Settings
+###Manage Settings
 This component is used to display the settings experience that site admins will interact with.  This component view will provide the necessary HTML markup and load necessary client side libraries and styling.
 
-###Files: resources > exnt_manageSettings > html
+####Files: resources > exnt_manageSettings > html
 - manageSettings.jsp
 
-##Template
+###Template
 This page template will provide the necessary HTML markup with Angular annotations and load the necessary client side libraries and styling.  In addition, the template will have build a JavaScript object with necessary urls and context to be used by Angular.  Once the template is ready, designers can create a Site setting template in Studio.  The designer will place the Manage Settings component in this template.
 
-###Files: resources > jnt_template > html
+####Files: resources > jnt_template > html
 - template.example.settings.jsp
 
 ##Angular
 
-##Settings Directive
+###Settings Directive
 The settings directive provides a fragment HTML template and a javascript that is used to bind the settings Angular object to the markup.
 
-###Files: resources > javascript > example > settings > directives > settings
+####Files: resources > javascript > example > settings > directives > settings
 - ma-settings.html
 - ma-settings.js
 
-##Setting Service
+###Setting Service
 The settings service provides the retrieve and storing of the settings.
 
-###Files: resources > javascript > example > settings > services
+####Files: resources > javascript > example > settings > services
 - ma-settings-services.js
 
-##i18n Directive and Service
+###i18n Directive and Service
 The i18n service and directive is used by the Settings directive to retrieve proper i18n value based on the user's locale.  Refer to the page template jsp on how the locale information injected.  The i18n services uses the i18n javascript generated during build time of this module.  The plugin will be found in the POM.xml for this module.  In addition, the `ServiceFilter` will place the correct i18n javascript file in the page context to be loaded when the page is served to the user.
 
-###Files: resources > javascript > example > settings > directives
+####Files: resources > javascript > example > settings > directives
 - i18n.js
 
-##Resources
+####Resources
 - http://www.learn-angular.org/
 
 ##Java
@@ -88,5 +88,6 @@ This service is normall injected into other object to manage site settings.  The
 
 ###Spring
 This spring file is used to declare spring objects that registered with the platform.  Once registered, the Spring objects can be injected into other object for use.
-###Files: /resources > META-INF > spring
+
+###Files: resources > META-INF > spring
 - example-site-settings.xml

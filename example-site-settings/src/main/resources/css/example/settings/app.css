@@ -1,122 +1,122 @@
 .md-toast.md-alert-theme {
-    /* Should use theming provide by angularjs material API but didn't find a how */
-    background-color: #E53935 !important;
+  /* Should use theming provide by angularjs material API but didn't find a how */
+  background-color: #E53935 !important;
 }
 
 div[jahiatype=mainmodule], body {
-    background-color: aliceblue;
-    font-family: Roboto,"Helvetica Neue",sans-serif;
+  background-color: aliceblue;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .ma-mainContent {
-    padding: 15px 330px 0;
+  padding: 15px 330px 0;
 }
 
-.ma-background{
-    background-color: aliceblue;
+.ma-background {
+  background-color: aliceblue;
 }
 
 .ma-picker-button {
-    position: absolute;
-    top: -3px;
-    left: -10px;
+  position: absolute;
+  top: -3px;
+  left: -10px;
 }
 
 /* Page picker */
 .ma-page-picker.md-dialog-content {
-    padding: 0;
+  padding: 0;
 }
 
 .ma-page-picker .ma-page-picker-tree {
-    min-height: 20px;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #fff;
+  min-height: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 .ma-page-picker .ma-page-picker-tree li {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px 5px 0 5px;
-    position: relative
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 5px 0 5px;
+  position: relative
 }
 
 .ma-page-picker .ma-page-picker-tree li::before, .ma-page-picker .ma-page-picker-tree li::after {
-    content: '';
-    left: -20px;
-    position: absolute;
-    right: auto
+  content: '';
+  left: -20px;
+  position: absolute;
+  right: auto
 }
 
 .ma-page-picker .ma-page-picker-tree li::before {
-    border-left: 1px solid #999;
-    bottom: 50px;
-    height: 100%;
-    top: 0;
-    width: 1px
+  border-left: 1px solid #999;
+  bottom: 50px;
+  height: 100%;
+  top: 0;
+  width: 1px
 }
 
 .ma-page-picker .ma-page-picker-tree li::after {
-    border-top: 1px solid #999;
-    height: 20px;
-    top: 30px;
-    width: 25px
+  border-top: 1px solid #999;
+  height: 20px;
+  top: 30px;
+  width: 25px
 }
 
 .ma-page-picker .ma-page-picker-tree li span {
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: inline-block;
-    padding: 6px 12px;
-    text-decoration: none;
-    background-color: #fff;
-    color: #333;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 6px 12px;
+  text-decoration: none;
+  background-color: #fff;
+  color: #333;
 }
 
 .ma-page-picker .ma-page-picker-tree li.parent_li > span.selectable {
-    cursor: pointer
+  cursor: pointer
 }
 
 .ma-page-picker .ma-page-picker-tree li.parent_li > .expander {
-    cursor: pointer
+  cursor: pointer
 }
 
 .ma-page-picker .ma-page-picker-tree > ul > li::before, .ma-page-picker .ma-page-picker-tree > ul > li::after {
-    border: 0
+  border: 0
 }
 
 .ma-page-picker .ma-page-picker-tree li:last-child::before {
-    height: 30px
+  height: 30px
 }
 
 .ma-page-picker .ma-page-picker-tree li.parent_li > span.selectable:hover, .ma-page-picker .ma-page-picker-tree li.parent_li > span.selectable:hover + ul li span {
-    background: #e6e6e6;
-    border: 1px solid #adadad;
-    color: #333;
+  background: #e6e6e6;
+  border: 1px solid #adadad;
+  color: #333;
 }
 
-.ma-page-picker .ma-page-picker-tree li span.selected, .ma-page-picker .ma-page-picker-tree li.parent_li > span.selected:hover, .ma-page-picker .ma-page-picker-tree li.parent_li > span:hover + ul li span.selected  {
-    background: #39f;
-    border: 1px solid #39f;
-    color: #fff;
+.ma-page-picker .ma-page-picker-tree li span.selected, .ma-page-picker .ma-page-picker-tree li.parent_li > span.selected:hover, .ma-page-picker .ma-page-picker-tree li.parent_li > span:hover + ul li span.selected {
+  background: #39f;
+  border: 1px solid #39f;
+  color: #fff;
 }
 
 .ma-tabs .md-tabs-wrapper, .md-card {
-    background-color: white;
+  background-color: white;
 }
 
 .hint {
-    /* Position the hint */
-    position: absolute;
-    left: 2px;
-    right: auto;
-    bottom: -4px;
-    /* Copy styles from ng-messages */
-    font-size: 12px;
-    line-height: 14px;
-    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-    /* Set our own color */
-    color: grey;
+  /* Position the hint */
+  position: absolute;
+  left: 2px;
+  right: auto;
+  bottom: -4px;
+  /* Copy styles from ng-messages */
+  font-size: 12px;
+  line-height: 14px;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  /* Set our own color */
+  color: grey;
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  <bean id="settingsAction" class="org.jahia.modules.actions.ExampleAction">
+    <property name="name" value="exampleAction"/>
+
+    <!-- Uncomment next line if you want your action to require the user to be logged -->
+    <!-- <property name="requireAuthenticatedUser" value="true"/> -->
+
+    <!-- Uncomment next line if you want your action to require a permission for being called -->
+    <!-- <property name="requiredPermission" value="nameOfThePermissionToCheck"/> -->
+
+    <!--
+      Uncomment next line if you want your action to require to be on a specific workspace for being called
+      i.e. Action creating content only on "live" workspace (comments, blogs, wiki, ...)
+    -->
+    <!-- <property name="requiredWorkspace" value="live"/> -->
+  </bean>
+</beans>

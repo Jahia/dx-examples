@@ -28,10 +28,10 @@ angular.module('jahia.example')
                 $scope.settings = settingsData;
                 $scope._displayMsg(false, i18nService.message('angular.example.directives.settings.ma-settings.message.settingsSaved'));
               }).error(function (error) {
-              if(error && error.type) {
-                  if (error.error) {
-                      $scope._displayMsg(true, error.error);
-                  }
+              if (error && error.type) {
+                if (error.error) {
+                  $scope._displayMsg(true, error.error);
+                }
               }
             });
           };
@@ -53,9 +53,9 @@ angular.module('jahia.example')
 
           $scope.validate = function () {
 
-            if($scope.settings.enabled) {
-              if(!$scope.settings.setting1) {
-                  return i18nService.message('angular.example.directives.settings.ma-settings.validate.message.setting1');
+            if ($scope.settings.enabled) {
+              if (!$scope.settings.setting1) {
+                return i18nService.message('angular.example.directives.settings.ma-settings.validate.message.setting1');
               }
 
             }

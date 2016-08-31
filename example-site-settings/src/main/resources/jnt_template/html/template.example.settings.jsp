@@ -44,7 +44,7 @@
         example/settings/app.css"/>
 
   <template:addResources type="css" resources="example/fixIEissue.css"/>
-  <template:addResources type="javascript"  resources="
+  <template:addResources type="javascript" resources="
         example/settings/libs/jquery.min.js,
         example/settings/libs/angular.min.js,
         example/settings/libs/angular-sanitize.min.js,
@@ -61,25 +61,25 @@
 
   <template:addResources>
     <script type="text/javascript">
-      (function(){
+      (function () {
         angular.module('jahia.example')
             .constant('maContextInfos', {
               i18nLabels: examplei18n,
               moduleBase: "${url.context}${url.currentModule}",
               uiLocale: "${renderContext.UILocale}",
-              siteKey:"${renderContext.site.siteKey}",
-              sitePath:"${renderContext.site.path}",
-              siteIdentifier:"${renderContext.site.identifier}",
+              siteKey: "${renderContext.site.siteKey}",
+              sitePath: "${renderContext.site.path}",
+              siteIdentifier: "${renderContext.site.identifier}",
               settingsActionUrl: "${url.context}${url.basePreview}${renderContext.site.path}.exampleSettings.do",
               serverContext: "${url.context}",
               hasSettings: ${exampleHasSettings},
-              generateId: function() {
+              generateId: function () {
                 return '_' + Math.random().toString(36).substr(2, 9);
               }
             });
       })();
 
-      $(document).ready(function() {
+      $(document).ready(function () {
         if (navigator.userAgent.indexOf('MSIE ') > 0) {
           $('body').addClass('msieCSS');
         }
@@ -88,6 +88,6 @@
   </template:addResources>
 </head>
 <body ng-app="jahia.example" class="ma-example-app">
-  <template:area path="pagecontent"/>
+<template:area path="pagecontent"/>
 </body>
 </html>

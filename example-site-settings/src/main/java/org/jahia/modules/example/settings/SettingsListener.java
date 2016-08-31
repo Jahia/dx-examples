@@ -63,7 +63,7 @@ public class SettingsListener extends DefaultEventListener implements ExternalEv
     @Override
     public String[] getNodeTypes() {
         return new String[]{
-            SettingsConstants.SETTINGS_NODE_TYPE
+                SettingsConstants.SETTINGS_NODE_TYPE
         };
     }
 

@@ -1,18 +1,18 @@
 .msieCSS .md-dialog-content {
-    display: block;
+  display: block;
 }
 
 .msieCSS .md-card-title {
-    display: inline;
+  display: inline;
 }
 
 .msieCSS .md-card-title-text {
-    display: inline-block;
-    padding: 24px 0 16px;
+  display: inline-block;
+  padding: 24px 0 16px;
 }
 
 .msieCSS .md-toolbar-tools button {
-    position: absolute;
-    top: 10px;
-    right: 16px;
+  position: absolute;
+  top: 10px;
+  right: 16px;
 }

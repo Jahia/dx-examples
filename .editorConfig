@@ -1,7 +1,7 @@
 [*.*]
 charset = utf-8
 
-[*.{js,css}]
+[*.{js,css,xml}]
 indent_style = space
 indent_size = 2
 

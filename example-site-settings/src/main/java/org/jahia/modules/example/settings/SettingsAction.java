@@ -135,7 +135,6 @@ public class SettingsAction extends Action {
     }
 
     /**
-     *
      * @param settingsService
      */
     public void setSettingsService(final SettingsService settingsService) {
