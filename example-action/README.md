@@ -23,4 +23,5 @@ This action provides a template to execute any custom logic.  In the comments, t
 - https://www.jahia.com/community/extend/developers-techwiki/content-manipulation/actions
 
 ####Troubleshooting
-Navigate to `http://<host>:<port>/modules/tools/actions.jsp` to view all registered actions.  If you action is not in the list, there might be a problem in the spring configuration of the aciton.
+- Navigate to `http://<host>:<port>/modules/tools/actions.jsp` to view all registered actions.  If you action is not in the list, there might be a problem in the spring configuration of the action.  
+- Logging can be turned on the fly using the Log4J administration console, `http://<host>:<port>/modules/tools/log4jAdmin.jsp`.

@@ -91,3 +91,8 @@ This spring file is used to declare spring objects that registered with the plat
 
 ###Files: resources > META-INF > spring
 - example-site-settings.xml
+
+##Troubleshooting
+- Navigate to `http://<host>:<port>/modules/tools/renderFilters.jsp` to view all registered filters.  The user is able to see the filter order as well as enable and disable filters.
+- Navigate to `http://<host>:<port>/modules/tools/actions.jsp` to view all registered actions.  If you action is not in the list, there might be a problem in the spring configuration of the action.  
+- Logging can be turned on the fly using the Log4J administration console, `http://<host>:<port>/modules/tools/log4jAdmin.jsp`.

@@ -1,5 +1,5 @@
 #Example Filter
-This example provides how to create an Jahia Action and register the action for use.
+This example provides how to create an Jahia Filter and register the filter for use.
 
 ##Tech Stack
 - Jahia DX
@@ -16,4 +16,5 @@ This filter adds a `Example Filter executed` to the end of each rendered content
 - hhttps://www.jahia.com/community/extend/developers-techwiki/rendering/filters
 
 ####Troubleshooting
-Navigate to `http://<host>:<port>/modules/tools/renderFilters.jsp` to view all registered filters.  The user is able to see the filter order as well as enable and disable filters. 
+- Navigate to `http://<host>:<port>/modules/tools/renderFilters.jsp` to view all registered filters.  The user is able to see the filter order as well as enable and disable filters.
+- Logging can be turned on the fly using the Log4J administration console, `http://<host>:<port>/modules/tools/log4jAdmin.jsp`.
