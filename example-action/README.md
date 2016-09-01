@@ -21,3 +21,6 @@ This action provides a template to execute any custom logic.  In the comments, t
 
 ####Resources
 - https://www.jahia.com/community/extend/developers-techwiki/content-manipulation/actions
+
+####Troubleshooting
+Navigate to `http://<host>:<port>/modules/tools/actions.jsp` to view all registered actions.  If you action is not in the list, there might be a problem in the spring configuration of the aciton.
