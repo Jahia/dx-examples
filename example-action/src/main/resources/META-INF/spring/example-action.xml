@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-  <bean id="settingsAction" class="org.jahia.modules.actions.ExampleAction">
+  <bean id="settingsAction" class="org.jahia.modules.example.actions.ExampleAction">
     <property name="name" value="exampleAction"/>
 
     <!-- Uncomment next line if you want your action to require the user to be logged -->

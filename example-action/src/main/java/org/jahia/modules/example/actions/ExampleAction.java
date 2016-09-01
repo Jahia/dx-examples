@@ -1,4 +1,4 @@
-package org.jahia.modules.actions;
+package org.jahia.modules.example.actions;
 
 import org.jahia.bin.Action;
 import org.jahia.bin.ActionResult;

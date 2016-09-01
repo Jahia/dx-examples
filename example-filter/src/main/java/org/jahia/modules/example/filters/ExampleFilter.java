@@ -1,4 +1,4 @@
-package org.jahia.modules.filters;
+package org.jahia.modules.example.filters;
 
 import org.jahia.services.render.RenderContext;
 import org.jahia.services.render.Resource;
