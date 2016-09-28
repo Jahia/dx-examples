@@ -1,2 +1,7 @@
-<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<exnt = 'http://www.jahia.org/example-module/nt'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+
+[exnt:displayTag] > jnt:content, jmix:basicContent
+ - name (string)
+
