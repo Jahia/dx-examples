@@ -14,3 +14,6 @@ Use this module to understand how to properly define a Jahia Filter.
 
 ###Example Authentication Valve
 Use this module to understand how to properly define a Jahia Authentication Valve.
+
+###Example JSP Tags and Functions
+Use this module to understand how to properly build a tag library and functions.
