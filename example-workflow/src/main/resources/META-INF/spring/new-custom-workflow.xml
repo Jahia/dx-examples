@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="customWH" parent="abstractWH" class="org.jahia.modules.newCustomWorkflows.CustomWorkItemHandler">
+        <property name="name" value="Custom work item handler"/>
+    </bean>
+    
+    <bean name="new-custom-workflow" class="org.jahia.services.workflow.WorklowTypeRegistration">
+        <property name="type" value="publish"/>
+        <property name="definition" value="new-custom-workflow"/>
+        <property name="forms">
+            <map>
+                <entry key="start" value="jnt:simpleWorkflow"/>
+                <entry key="review" value="jnt:simpleWorkflow"/>
+            </map>
+        </property>
+        <property name="permissions" >
+            <map>
+                <entry key="start" value="publication-start"/>
+                <entry key="review" value="publication-review"/>
+            </map>
+        </property>
+    </bean>
+</beans>

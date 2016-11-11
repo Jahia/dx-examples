@@ -96,6 +96,7 @@
     <module>example-filter</module>
     <module>example-rules</module>
     <module>example-jsp-tag</module>
+    <module>example-workflow</module>
   </modules>
 
   <repositories>
