@@ -1,6 +1,7 @@
 package org.jahia.modules.example.log;
 
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.jahia.settings.SettingsBean;
 import org.osgi.framework.BundleActivator;
@@ -25,13 +26,13 @@ public class LogAdditionalConfigurationLoaderActivator implements BundleActivato
 		// Retrieve the path where to look for the additional log4j XML configuration file
 		String configLogFolderUrl = SettingsBean.getInstance().getPropertiesFile().getProperty(CONFIG_LOG_FOLDER_URL_KEY);
 
-		if (configLogFolderUrl == null || "".equals(configLogFolderUrl)) {
+		if (StringUtils.isBlank(configLogFolderUrl)) {
 			logger.warn("Could not load the additional Log4j configuration, the key 'logging.altLogFile.url' is not " +
 					"specified within configurations file");
 			return;
 		}
 
-		final URL confsURL = this.getClass().getResource(SettingsBean.getInstance().getPropertiesFile().getProperty(CONFIG_LOG_FOLDER_URL_KEY));
+		final URL confsURL = this.getClass().getResource(configLogFolderUrl);
 
 		if (confsURL == null) {
 			logger.warn("Could not load the additional Log4j configuration, configLogFolder URL not specified");
@@ -50,13 +51,12 @@ public class LogAdditionalConfigurationLoaderActivator implements BundleActivato
 
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
-		if (this.context == null) {
-			this.context = bundleContext;
-		}
 		this.loadAdditionalConfiguration();
 	}
 
 	@Override
 	public void stop(BundleContext bundleContext) throws Exception {
+		// Eventually look for a way to "unregister" the additional configuration previously loaded in the
+		// loadAdditionalConfiguration() method
 	}
 }
