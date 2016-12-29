@@ -98,6 +98,7 @@
     <module>example-jsp-tag</module>
     <module>example-workflow</module>
     <module>example-externalize-log4j-config</module>
+    <module>example-tools</module>
   </modules>
 
   <repositories>
