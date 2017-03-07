@@ -85,6 +85,7 @@
                 <configuration>
                     <instructions>
                         <Jahia-Depends>default</Jahia-Depends>
+                        <Export-Package>org.jahia.modules.example.rules.services</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>

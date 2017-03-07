@@ -1,0 +1,30 @@
+package org.jahia.modules.example.rules.services
+
+// list any import classes here.
+import org.jahia.services.content.rules.*
+import org.jahia.services.content.JCRContentUtils
+import org.slf4j.Logger
+import org.jahia.modules.example.rules.services.SeoShortenerService
+
+expander rules.dsl
+
+// declare any global variables here
+global User user
+global Service service
+global Logger logger
+global JCRContentUtils jcrUtils
+global SeoShortenerService seoShortenerService
+
+rule "Add auto-generated SEO mapping for new page with depth of 3 or more"
+    when
+        Not in operation import
+        A new node is created
+            - the node has the type jnt:page
+            - is a third level page
+    then
+        Log "Page creation with a depth of 3 or more detected"
+        Add short URL for node node
+end
+
+// To be more complete we should do another rule for catching modification of page title, which may impact existing
+// SEO url
