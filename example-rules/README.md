@@ -1,5 +1,6 @@
 #Example Rules Library
 This example shows how to create a new rule (using Drools), and how to create new Drools' condition & consequence.
+
 For more information please refer to documentation: https://www.jahia.com/community/extend/developers-techwiki/events-rules-jobs/rules
 
 ##Functional

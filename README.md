@@ -19,6 +19,9 @@ Use this module to understand how to properly define a Jahia Filter.
 ###Example JSP Tags and Functions
 Use this module to understand how to properly build a tag library and functions.
 
+###Example Rules
+Use this module to understand how to properly add a new Drools rule.
+
 ###Example Site Setting
 Use this module to standardize the implementation of Site Settings using AngularJS.
 
