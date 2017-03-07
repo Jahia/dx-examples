@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by smomin on 8/31/16.
- */
 public class ExampleAction extends Action {
 
     /**
@@ -64,7 +61,7 @@ public class ExampleAction extends Action {
             throws Exception {
         final HttpServletResponse response = renderContext.getResponse();
 
-		// The below code is to demostrate a successful visiable response.
+		// The below code is to demonstrate a successful visible response.
         response.getWriter().write("Hello Example Action!  The node path is " + resource.getNode().getPath());
 
         // No redirect, will only return a 200

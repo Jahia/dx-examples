@@ -7,9 +7,6 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.jsp.JspException;
 import java.io.IOException;
 
-/**
- * Created by smomin on 9/28/16.
- */
 public class ExampleTag extends AbstractJahiaTag {
     private static final Logger LOGGER = LoggerFactory.getLogger(ExampleTag.class);
     private String name;

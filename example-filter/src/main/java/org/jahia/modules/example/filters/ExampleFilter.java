@@ -5,9 +5,6 @@ import org.jahia.services.render.Resource;
 import org.jahia.services.render.filter.AbstractFilter;
 import org.jahia.services.render.filter.RenderChain;
 
-/**
- * Created by smomin on 8/31/16.
- */
 public class ExampleFilter extends AbstractFilter {
 
     /**
