@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+    <var name="customWebprojectHandler" class="org.jahia.modules.serversettings.flow.WebprojectHandler"/>
+
+    <view-state id="view" model="customWebprojectHandler">
+
+        <transition on="createSite" to="createSite">
+            <set name="flowScope.siteBean" value="customWebprojectHandler.newSite"/>
+            <set name="flowScope.siteBean.language" value="externalContext.requestMap.currentResource.locale.toString()" />
+        </transition>
+
+    </view-state>
+
+    <!-- Site creation -->
+
+    <view-state id="createSite" model="siteBean">
+        <on-render>
+            <evaluate expression="customWebprojectHandler.numberOfSites" result="flashScope.numberOfSites"/>
+            <evaluate expression="customWebprojectHandler.getAdminURL(flowRequestContext)" result="flowScope.adminURL"/>
+        </on-render>
+        <transition on="next" to="createSiteAdministratorConditionNext" />
+        <transition on="cancel" to="view" validate="false" />
+    </view-state>
+
+    <decision-state id="createSiteAdministratorConditionNext" >
+        <if test="siteBean.createAdmin" then="siteAdminPropertiesForm" else="createSiteSelectModules" />
+    </decision-state>
+
+    <decision-state id="createSiteAdministratorConditionPrevious" >
+        <if test="siteBean.createAdmin" then="siteAdminPropertiesForm" />
+        <if test="siteBean.editModules" then="editSite" else="createSite" />
+    </decision-state>
+
+    <decision-state id="createSiteSelectModulesConditionNext">
+        <if test="siteBean.editModules" then="updateSite" else="createSiteSummary"/>
+    </decision-state>
+
+    <view-state id="siteAdminPropertiesForm" model="siteBean.adminProperties">
+        <transition on="previous" to="createSite" validate="false"/>
+        <transition on="next" to="createSiteSelectModules" />
+    </view-state>
+
+    <view-state id="createSiteSelectModules" model="siteBean">
+        <on-render>
+            <evaluate expression="JahiaTemplateManagerService.nonSystemTemplateSetPackages" result="flashScope.templateSets"/>
+            <evaluate expression="JahiaTemplateManagerService.nonSystemModulePackages" result="flashScope.modules"/>
+            <evaluate expression="customWebprojectHandler.defaultTemplateSetId" result="flashScope.defaultTemplateSetId"/>
+            <evaluate expression="T(org.jahia.utils.LanguageCodeConverters).getSortedLocaleList(externalContext.requestMap.currentResource.locale)" result="flashScope.allLocales"/>
+        </on-render>
+
+        <transition on="previous" to="createSiteAdministratorConditionPrevious" />
+        <transition on="next" to="createSiteSelectModulesConditionNext" />
+    </view-state>
+
+    <view-state id="createSiteSummary" model="siteBean">
+        <transition on="previous" to="createSiteSelectModules" />
+        <transition on="next" to="createSiteAction" />
+    </view-state>
+
+    <action-state id="createSiteAction" >
+        <evaluate expression="customWebprojectHandler.createSite(siteBean)"/>
+        <transition to="siteCreated" />
+    </action-state>
+
+    <view-state id="siteCreated" view="externalRedirect:#{flowScope.adminURL}"/>
+
+</flow>

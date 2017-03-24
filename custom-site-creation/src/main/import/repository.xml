@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
+    <modules jcr:primaryType="jnt:modules">
+        <custom-site-creation j:dependencies="default serverSettings"
+                            j:modulePriority="0"
+                            j:moduleType="module"
+                            j:title="Custom Site Creation"
+                            jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                            jcr:primaryType="jnt:module">
+                
+                <portlets jcr:primaryType="jnt:portletFolder"/>
+                <files jcr:primaryType="jnt:folder"/>
+                <contents jcr:primaryType="jnt:contentFolder"/>
+                <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
+                    <files jcr:primaryType="jnt:folder"/>
+                    <contents jcr:primaryType="jnt:contentFolder"/>
+                    <server-settings-base j:view="serverSettings"
+                                  jcr:mixinTypes="jmix:useUILocale"
+                                  jcr:primaryType="jnt:template">
+                        <customWebProjectSettings j:applyOn="jnt:globalSettings"
+                                         j:defaultTemplate="false"
+                                         j:hiddenTemplate="false"
+                                         j:icon="/modules/serverSettings/templates/files/serveradmin/web_x0020_projects/webprojects.png"
+                                         j:requiredPermissionNames="adminVirtualSites"
+                                         j:titleKey="customServerSettings.manageWebProjects"
+                                         jcr:mixinTypes="jmix:rbTitle"
+                                         jcr:primaryType="jnt:contentTemplate">
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <manage-web-projects jcr:primaryType="jnt:customServerSettingsManageWebProjects"/>
+                            </pagecontent>
+                        </customWebProjectSettings>
+                    </server-settings-base>
+                </templates>
+                
+            </custom-site-creation>
+    </modules>
+</content>

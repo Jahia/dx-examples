@@ -99,6 +99,7 @@
     <module>example-workflow</module>
     <module>example-externalize-log4j-config</module>
     <module>example-tools</module>
+	<module>custom-site-creation</module>
   </modules>
 
   <repositories>

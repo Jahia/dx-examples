@@ -32,3 +32,6 @@ registered within the Tools menu, you will have to directly go to its URL.
 ###Example Workflow
 Use this module to understand how to implement a custom BPMN Workflow. A step-by-step tutorial available on Jahia's
 website show how to implement this workflow : https://www.jahia.com/community/extend/developers-techwiki/services/workflows/example
+
+###Custom Site Creation
+This module allows you to deploy a new site creation panel in the server administration panel. This custom site creation allows to define additionnal site properties as well as changing the template for the home page during site creation
