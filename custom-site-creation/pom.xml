@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jahia.modules</groupId>
+    <artifactId>dx-examples</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>custom-site-creation</artifactId>
+  <packaging>bundle</packaging>
+  <name>Custom Site Creation</name>
+  <description>This is the custom module (Custom Site Creation) for running on a Digital Factory server.</description>
+  <scm>
+    <connection>scm:dummy:uri</connection>
+    <developerConnection>scm:dummy:uri</developerConnection>
+  </scm>
+  <properties>
+    <jahia-deploy-on-site>system</jahia-deploy-on-site>
+    <jahia-module-type>system</jahia-module-type>
+    <jahia-depends>default,serverSettings</jahia-depends>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.jahia.modules</groupId>
+      <artifactId>siteSettings</artifactId>
+      <version>[7.1,)</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>jahia-public</id>
+      <name>Jahia Public Repository</name>
+      <url>https://devtools.jahia.com/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+</project>
