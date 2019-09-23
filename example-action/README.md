@@ -4,15 +4,15 @@ This example provides how to create an Jahia Action and register the action for 
 ## Tech Stack
 - Jahia DX
 
-##Usage
+## Usage
 Install module and enable for site.  Drag Example Action Submitter onto a page.  Click on link to execute action.
 
 ## Component
 
 ### Example Action Submitter
 This component just provides an url so the Jahia Action can be executed.
-####Files: resources > exnt_actionSubmitter > html
-- actionSubmitter.jsp
+#### Files: 
+- resources > exnt_actionSubmitter > html - actionSubmitter.jsp
 
 ## Java
 
